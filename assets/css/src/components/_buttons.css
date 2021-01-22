@@ -1,0 +1,15 @@
+input[type="submit"],
+input[type="reset"],
+input[type="button"],
+button,
+.button,
+a.button {
+	background-color: var(--color-theme-primary);
+	color: var(--color-theme-white);
+	border: none;
+	outline: 0;
+	border-radius: 0.25rem;
+	padding: 0.5em 1em;
+	text-transform: uppercase;
+	cursor: pointer;
+}

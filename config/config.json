@@ -1,1 +1,46 @@
-{}
+{
+  "theme": {
+    "slug": "frisk",
+    "name": "Frisk",
+    "author": "Bart Jaskulski",
+    "PHPNamespace": "brtj\\WP_Theme"
+  },
+  "dev": {
+    "browserSync": {
+      "live": true,
+      "proxyURL": "slowik.test:8888",
+      "bypassPort": "8181",
+      "https": false
+    },
+    "styles": {
+      "stage": 2,
+      "autoprefixer": {
+        "grid": false
+      },
+      "importFrom": [
+        "_custom-media.css"
+      ],
+      "features": {
+        "custom-media-queries": true,
+        "custom-properties": true,
+        "nesting-rules": true
+      }
+    },
+    "debug": {
+      "styles": false,
+      "scripts": false,
+      "phpcs": false
+    }
+  },
+  "export": {
+    "compress": true,
+    "generatePotFile": true,
+    "filesToCopy": [
+      "LICENSE",
+      "readme.txt",
+      "screenshot.png",
+      "assets/css/vendor/**/*.css",
+      "assets/js/vendor/**/*.js"
+    ]
+  }
+}

@@ -1,5 +1,3 @@
-@import "_custom-properties.css";
-
 /*--------------------------------------------------------------
 ## Blocks
 --------------------------------------------------------------*/
@@ -32,21 +30,32 @@
  * .wp-block-archives
  */
 
+.wp-block-button__link {
+	background-color: var(--color-theme-primary);
+	color: var(--color-theme-white);
+	border: none;
+	outline: 0;
+	border-radius: 0.25rem;
+	padding: 0.5em 1em;
+	text-transform: uppercase;
+	cursor: pointer;
+}
+
 .wp-block-quote.is-large,
 .wp-block-quote.is-style-large {
 	margin: 1.5em auto;
 	padding: 0 1em;
 }
 
-.entry-content > .wp-block-quote,
-.entry-content > .wp-block-quote.is-style-large {
+.entry-content>.wp-block-quote,
+.entry-content>.wp-block-quote.is-style-large {
 	margin-left: 1.5rem;
 }
 
-@media (--content-query) {
+@media (--medium) {
 
-	.entry-content > .wp-block-quote,
-	.entry-content > .wp-block-quote.is-style-large {
+	.entry-content>.wp-block-quote,
+	.entry-content>.wp-block-quote.is-style-large {
 		margin-left: auto;
 	}
 }
@@ -55,9 +64,9 @@
 	border-left-color: var(--color-quote-border);
 }
 
-.wp-block-quote__citation,
 .wp-block-quote cite,
-.wp-block-quote footer {
+.wp-block-quote footer,
+.wp-block-quote__citation {
 	border-left-color: var(--color-quote-citation);
 }
 
@@ -66,7 +75,7 @@
 	align-items: center;
 }
 
-.wp-block-cover__inner-container > * {
+.wp-block-cover__inner-container>* {
 	max-width: var(--content-width);
 	margin-left: auto;
 	margin-right: auto;
@@ -77,17 +86,17 @@
 	margin-top: 0;
 }
 
-.wp-block-latest-posts,
-.wp-block-latest-comments {
+.wp-block-latest-comments,
+.wp-block-latest-posts {
 	padding-top: 1.5em;
 	padding-bottom: 1.5em;
 	border: 1px solid hsl(0, 0%, 80%);
 }
 
-ul.wp-block-latest-posts.alignwide,
 ul.wp-block-latest-posts.alignfull,
-ul.wp-block-latest-posts.is-grid.alignwide,
-ul.wp-block-latest-posts.is-grid.alignfull {
+ul.wp-block-latest-posts.alignwide,
+ul.wp-block-latest-posts.is-grid.alignfull,
+ul.wp-block-latest-posts.is-grid.alignwide {
 	padding: 0 1.5em;
 }
 
@@ -113,7 +122,6 @@ ul.wp-block-latest-posts.is-grid.alignfull {
 }
 
 @media screen and (min-width: 48em) {
-
 	.entry-content .wp-block-gallery {
 		padding-right: 0;
 		padding-left: 0;
@@ -133,7 +141,6 @@ ul.wp-block-latest-posts.is-grid.alignfull {
 	width: inherit;
 }
 
-
 .blocks-gallery-item:last-child:nth-child(odd) {
 	grid-column: span 2;
 }
@@ -146,7 +153,6 @@ ul.wp-block-latest-posts.is-grid.alignfull {
 }
 
 @media screen and (min-width: 40em) {
-
 	.wp-block-gallery.columns-2 {
 		grid-template-columns: repeat(2, 1fr);
 	}

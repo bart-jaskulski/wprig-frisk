@@ -1,7 +1,6 @@
-@import "_custom-properties.css";
-
 /*--------------------------------------------------------------
 # Typography
+  # Headings
 --------------------------------------------------------------*/
 /* stylelint-disable */
 body,
@@ -13,9 +12,13 @@ textarea {
 	color: var(--global-font-color);
 	font-family: var(--global-font-family);
 	font-size: var(--font-size-regular);
-	line-height: var(--global-font-line-height);
 }
+
 /* stylelint-enable */
+
+/*------------------------------------------------------------
+# Headings
+-------------------------------------------------------------*/
 
 h1,
 h2,
@@ -23,9 +26,37 @@ h3,
 h4,
 h5,
 h6 {
-	font-family: var(--highlight-font-family);
-	font-stretch: condensed;
+	color: var(--color-theme-primary);
 	clear: both;
+}
+
+h1,
+.h1 {
+	font-size: 2.4rem;
+	border-left: 8px solid;
+	padding-left: 1.1rem;
+}
+
+h2,
+.h2 {
+	font-size: 1.65rem;
+}
+
+h3,
+.h3 {
+	font-size: 1.15rem;
+	margin: 1em auto;
+}
+
+h4,
+.h4 {
+	font-size: 1.2rem;
+}
+
+h5,
+.h5 {
+	font-size: 0.85rem;
+	margin: 1em auto;
 }
 
 .entry-title-singular,
@@ -45,7 +76,7 @@ i {
 
 blockquote,
 q {
-	quotes: "" "";
+	quotes: """";
 }
 
 blockquote {
@@ -53,14 +84,14 @@ blockquote {
 	margin: 0;
 }
 
-.entry-content > blockquote {
+.entry-content>blockquote {
 	padding-left: 1em;
 	margin-left: 1.5rem;
 }
 
-@media (--content-query) {
+@media (--medium) {
 
-	.entry-content > blockquote {
+	.entry-content>blockquote {
 		margin-left: auto;
 	}
 }
@@ -88,6 +119,7 @@ pre {
 	overflow: auto;
 	padding: 1.5em;
 }
+
 /* stylelint-enable */
 
 code,

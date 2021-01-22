@@ -1,5 +1,3 @@
-@import "_custom-properties.css";
-
 /*--------------------------------------------------------------
 # Links
 --------------------------------------------------------------*/
@@ -7,6 +5,7 @@
 a {
 	color: var(--color-link);
 }
+
 /* stylelint-enable */
 
 a:visited {
@@ -26,4 +25,9 @@ a:focus {
 a:hover,
 a:active {
 	outline: 0;
+}
+
+a[href*="mailto"],
+a[href*="tel"] {
+	text-decoration: none;
 }

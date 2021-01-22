@@ -43,7 +43,6 @@ class Component implements Component_Interface, Templating_Component_Interface {
 	 */
 	public function initialize() {
 		add_action( 'widgets_init', array( $this, 'action_register_sidebars' ) );
-		add_filter( 'body_class', array( $this, 'filter_body_classes' ) );
 	}
 
 	/**
@@ -75,24 +74,6 @@ class Component implements Component_Interface, Templating_Component_Interface {
 				'after_title'   => '</h3>',
 			)
 		);
-	}
-
-	/**
-	 * Adds custom classes to indicate whether a sidebar is present to the array of body classes.
-	 *
-	 * @param array $classes Classes for the body element.
-	 * @return array Filtered body classes.
-	 */
-	public function filter_body_classes( array $classes ) : array {
-		if ( $this->is_primary_sidebar_active() ) {
-			global $template;
-
-			if ( ! in_array( basename( $template ), array( 'front-page.php', '404.php', '500.php', 'offline.php' ) ) ) {
-				$classes[] = 'has-sidebar';
-			}
-		}
-
-		return $classes;
 	}
 
 	/**

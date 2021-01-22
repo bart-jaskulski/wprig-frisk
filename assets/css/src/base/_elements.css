@@ -7,6 +7,7 @@
 html {
 	box-sizing: border-box;
 }
+
 /* stylelint-enable */
 
 /**
@@ -15,9 +16,10 @@ html {
  * http://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/
  */
 *,
-*::before,
-*::after {
+*::after,
+*::before {
 	box-sizing: inherit;
+	line-height: var(--global-font-line-height);
 }
 
 /* stylelint-disable */
@@ -25,6 +27,7 @@ body {
 	background: #fff;
 	/* Fallback for when there is no custom background color defined. */
 }
+
 /* stylelint-enable */
 
 /* stylelint-disable */
@@ -34,9 +37,16 @@ hr {
 	height: 1px;
 	margin-bottom: 1.5em;
 }
+
 /* stylelint-enable */
 
-ul,
+.container {
+	max-width: var(--content-width);
+	margin-left: auto;
+	margin-right: auto;
+}
+
+/* ul,
 ol {
 	margin: 0 0 1.5em 0;
 	padding-left: 1.5em;
@@ -48,10 +58,10 @@ ul {
 
 ol {
 	list-style: decimal;
-}
+} */
 
-li > ul,
-li > ol {
+li>ol,
+li>ul {
 	margin-bottom: 0;
 }
 
@@ -69,9 +79,10 @@ img {
 	height: auto;
 	max-width: 100%;
 }
+
 /* stylelint-enable */
 
-/* Extra wide images within figure tags don't overflow the content area. */
+/* Extra wide images within figure tags don"t overflow the content area. */
 figure {
 	margin: 0.5em 0;
 }
@@ -79,4 +90,8 @@ figure {
 table {
 	margin: 0 0 1.5em;
 	width: 100%;
+}
+
+address {
+	margin: 0;
 }

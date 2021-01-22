@@ -12,11 +12,13 @@
 	# Custom font sizes
 --------------------------------------------------------------*/
 
-/*--------------------------------------------------------------
-# Imports
---------------------------------------------------------------*/
-@import "_blocks.css";
-@import "_media.css";
+/* Plugins compatibility. */
+@import "plugins/_wp.css";
+
+/* Utility classes. */
+@import "utils/_colors.css";
+@import "utils/_font-sizes.css";
+@import "utils/_alignment.css";
 
 /*--------------------------------------------------------------
 # Post and page content
@@ -58,14 +60,14 @@
 	margin: 1.5em 0 0;
 }
 
-.entry-content > ul,
-.entry-content > ol {
+.entry-content>ul,
+.entry-content>ol {
 	padding-left: 3.5em;
 }
 
-.page-content > *,
-.entry-content > *,
-.entry-summary > * {
+.page-content>*,
+.entry-content>*,
+.entry-summary>* {
 	margin-right: auto;
 	margin-left: auto;
 	padding-right: 1.5rem;
@@ -84,9 +86,9 @@
 	margin-bottom: 1.5em;
 }
 
-.page-content > *,
-.entry-content > *,
-.entry-summary > *,
+.page-content>*,
+.entry-content>*,
+.entry-summary>*,
 .page-header,
 .entry-header,
 .entry-footer,
@@ -103,15 +105,15 @@
 
 @media (--content-query) {
 
-	.entry-content > ul,
-	.entry-content > ol {
+	.entry-content>ul,
+	.entry-content>ol {
 		padding-left: 2.5em;
 		padding-right: 2.5em;
 	}
 
-	.page-content > *,
-	.entry-content > *,
-	.entry-summary > *,
+	.page-content>*,
+	.entry-content>*,
+	.entry-summary>*,
 	.page-header,
 	.entry-header,
 	.entry-footer,
@@ -125,7 +127,7 @@
 }
 
 /* Align .more-link with the content. */
-.entry-content > .more-link {
+.entry-content>.more-link {
 	display: block;
 }
 
@@ -182,17 +184,17 @@
 	padding: 0;
 }
 
-.page-content > .alignleft,
-.entry-content > .alignleft,
-.entry-summary > .alignleft {
+.page-content>.alignleft,
+.entry-content>.alignleft,
+.entry-summary>.alignleft {
 	margin-left: 1.5rem;
 	padding-left: 0;
 	padding-right: 0;
 }
 
-.page-content > .alignright,
-.entry-content > .alignright,
-.entry-summary > .alignright {
+.page-content>.alignright,
+.entry-content>.alignright,
+.entry-summary>.alignright {
 	margin-right: 1.5rem;
 	padding-left: 0;
 	padding-right: 0;
@@ -200,30 +202,30 @@
 
 @media (--content-query) {
 
-	.page-content > .alignleft,
-	.entry-content > .alignleft,
-	.entry-summary > .alignleft {
+	.page-content>.alignleft,
+	.entry-content>.alignleft,
+	.entry-summary>.alignleft {
 		margin-left: calc((100vw - var(--content-width)) / 2);
 	}
 
-	.page-content > .alignright,
-	.entry-content > .alignright,
-	.entry-summary > .alignright {
+	.page-content>.alignright,
+	.entry-content>.alignright,
+	.entry-summary>.alignright {
 		margin-right: calc((100vw - var(--content-width)) / 2);
 	}
 }
 
 @media (--sidebar-query) {
 
-	.has-sidebar .page-content > .alignleft,
-	.has-sidebar .entry-content > .alignleft,
-	.has-sidebar .entry-summary > .alignleft {
+	.has-sidebar .page-content>.alignleft,
+	.has-sidebar .entry-content>.alignleft,
+	.has-sidebar .entry-summary>.alignleft {
 		margin-left: calc((75vw - 2rem - var(--content-width)) / 2);
 	}
 
-	.has-sidebar .page-content > .alignright,
-	.has-sidebar .entry-content > .alignright,
-	.has-sidebar .entry-summary > .alignright {
+	.has-sidebar .page-content>.alignright,
+	.has-sidebar .entry-content>.alignright,
+	.has-sidebar .entry-summary>.alignright {
 		margin-right: calc((75vw - 2rem - var(--content-width)) / 2);
 	}
 }
