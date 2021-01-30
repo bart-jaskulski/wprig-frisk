@@ -8,10 +8,14 @@
 @import "base/_typography.css";
 @import "base/_elements.css";
 @import "base/_links.css";
+@import "base/_table.css";
 
 /* Theme components. */
 @import "components/_forms.css";
 @import "components/_buttons.css";
+@import "components/_hero.css";
+@import "components/_border-image.css";
+@import "components/_address-sidebar.css";
 
 /* Partial layouts. */
 @import "partials/_header.css";
@@ -28,69 +32,43 @@
  * words as they would appear visually.
  */
 .screen-reader-text {
-	clip: rect(1px, 1px, 1px, 1px);
-	position: absolute !important;
-	height: 1px;
-	width: 1px;
-	overflow: hidden;
-	word-wrap: normal !important;
+  clip: rect(1px, 1px, 1px, 1px);
+  position: absolute !important;
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+  word-wrap: normal !important;
 }
 
 .screen-reader-text:focus {
-	background-color: #f1f1f1;
-	border-radius: 3px;
-	box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
-	clip: auto !important;
-	color: #21759b;
-	display: block;
-	font-size: 0.875rem;
-	font-weight: 700;
-	height: auto;
-	left: 5px;
-	line-height: normal;
-	padding: 15px 23px 14px;
-	text-decoration: none;
-	top: 5px;
-	width: auto;
-	z-index: 100000;
-	/* Above WP toolbar. */
+  background-color: #f1f1f1;
+  border-radius: 3px;
+  box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
+  clip: auto !important;
+  color: #21759b;
+  display: block;
+  font-size: 0.875rem;
+  font-weight: 700;
+  height: auto;
+  left: 5px;
+  line-height: normal;
+  padding: 15px 23px 14px;
+  text-decoration: none;
+  top: 5px;
+  width: auto;
+  z-index: 100000;
+  /* Above WP toolbar. */
 }
 
 /* Do not show the outline on the skip link target. */
 #primary[tabindex="-1"]:focus {
-	outline: 0;
+  outline: 0;
 }
 
 /*--------------------------------------------------------------
 # Layouts
 --------------------------------------------------------------*/
 .site {
-	margin: 0 auto;
-	max-width: 100%;
-}
-
-@media (--sidebar-query) {
-
-	.has-sidebar .site {
-		margin: 0 1em;
-		display: grid;
-		grid-template-columns: 3fr 1fr;
-		grid-gap: 2rem;
-		justify-content: center;
-	}
-
-	.site-header,
-	.site-footer {
-		grid-column: 1 / -1;
-	}
-
-	.site-main {
-		grid-column: 1;
-		min-width: 0;
-	}
-
-	.primary-sidebar {
-		grid-column: 2;
-		min-width: 0;
-	}
+  margin: 0 auto;
+  max-width: 100%;
 }

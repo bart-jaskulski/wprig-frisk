@@ -30,10 +30,6 @@ wp_rig()->print_styles( 'wp-rig-content' );
 
 				get_template_part( 'template-parts/content/entry', get_post_type() );
 			}
-
-			if ( ! is_singular() ) {
-				get_template_part( 'template-parts/content/pagination' );
-			}
 		} else {
 			get_template_part( 'template-parts/content/error' );
 		}

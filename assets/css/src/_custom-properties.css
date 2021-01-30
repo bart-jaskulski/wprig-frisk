@@ -6,35 +6,46 @@
  **/
 
 :root {
-	--content-width: 75rem;
-	--dropdown-symbol-width: 0.7em;
+  --content-width: 75rem;
+  --dropdown-symbol-width: 0.7em;
 
-	/* Typography */
-	--global-font-family: "Crimson Text", serif;
-	--highlight-font-family: "Roboto Condensed", "Helvetica Neue", "Arial Narrow", sans-serif;
-	--global-font-size: 16;
-	--global-font-line-height: calc(2ex + 6px);
+  /* Typography */
+  --global-font-family: "Open Sans", sans-serif;
+  --highlight-font-family: "Poppins", "Montserrat", "Helvetica", Arial,
+    sans-serif;
+  --global-font-size: 16;
+  --global-font-line-height: calc(2ex + 6px);
 
-	/* Custom editor font sizes */
-	--font-size-small: calc(16 / var(--global-font-size) * 1rem);
-	--font-size-regular: calc(var(--global-font-size) / 16 * 1rem);
-	--font-size-large: calc(36 / var(--global-font-size) * 1rem);
-	--font-size-larger: calc(48 / var(--global-font-size) * 1rem);
+  /* Custom editor font sizes */
+  --font-size-small: calc(16 / var(--global-font-size) * 1rem);
+  --font-size-regular: calc(var(--global-font-size) / 16 * 1rem);
+  --font-size-large: calc(36 / var(--global-font-size) * 1rem);
+  --font-size-larger: calc(48 / var(--global-font-size) * 1rem);
 
-	/* Colors */
-	--global-font-color: #333;
-	--border-color-dark: #333;
-	--border-color-light: #ccc;
-	--color-link: #0073aa;
-	--color-link-visited: #333;
-	--color-link-active: #00a0d2;
-	--color-quote-border: #000;
-	--color-quote-citation: #6c7781;
+  /* Colors */
+  --global-font-color: #3c3c3b;
+  --border-color-dark: #333;
+  --border-color-light: #ccc;
+  --color-link: #0073aa;
+  --color-link-visited: #333;
+  --color-link-active: #00a0d2;
+  --color-quote-border: #000;
+  --color-quote-citation: #6c7781;
 
-	/* Custom editor colors */
-	--color-theme-primary: #e36d60;
-	--color-theme-secondary: #41848f;
-	--color-theme-black: #1c2833;
-	--color-theme-grey: #95a5a6;
-	--color-theme-white: #ecf0f1;
+  /* Custom editor colors */
+  --color-theme-primary: #10ae96;
+  --color-theme-secondary: #41848f;
+  --color-theme-black: #3c3c3b;
+  --color-theme-grey: #eaeaea;
+  --color-theme-white: #ffffff;
+
+  --color-theme-primary-gradient: linear-gradient(
+    180deg,
+    #14c0a6 0%,
+    #10ae96 100%
+  );
+
+  /* Material UI style shadow */
+  --shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.12),
+    0 1px 5px 0 rgba(0, 0, 0, 0.2);
 }

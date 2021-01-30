@@ -64,17 +64,12 @@ class Component implements Component_Interface {
 				array(
 					'name'  => __( 'Primary', 'wp-rig' ),
 					'slug'  => 'theme-primary',
-					'color' => '#e36d60',
-				),
-				array(
-					'name'  => __( 'Secondary', 'wp-rig' ),
-					'slug'  => 'theme-secondary',
-					'color' => '#41848f',
+					'color' => '#10AE96',
 				),
 				array(
 					'name'  => __( 'Black', 'wp-rig' ),
 					'slug'  => 'theme-black',
-					'color' => '#1C2833',
+					'color' => '#3C3C3B',
 				),
 				array(
 					'name'  => __( 'Grey', 'wp-rig' ),
@@ -84,7 +79,7 @@ class Component implements Component_Interface {
 				array(
 					'name'  => __( 'White', 'wp-rig' ),
 					'slug'  => 'theme-white',
-					'color' => '#ECF0F1',
+					'color' => '#ffffff',
 				),
 			)
 		);
@@ -121,6 +116,23 @@ class Component implements Component_Interface {
 					'shortName' => __( 'XL', 'wp-rig' ),
 					'size'      => 39,
 					'slug'      => 'larger',
+				),
+			)
+		);
+
+		/*
+		 * Add support custom gradient presets.
+		 *
+		 * Add the line below to disable the custom color picker in the editor.
+		 * add_theme_support( 'disable-custom-gradient-presets' );
+		 */
+		add_theme_support(
+			'editor-gradient-presets',
+			array(
+				array(
+					'name'     => __( 'Primary gradient', 'wp-rig' ),
+					'gradient' => 'linear-gradient(180deg, #14C0A6 0%, #10AE96 100%)',
+					'slug'     => 'primary',
 				),
 			)
 		);

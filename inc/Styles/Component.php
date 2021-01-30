@@ -289,9 +289,7 @@ class Component implements Component_Interface, Templating_Component_Interface {
 			),
 			'wp-rig-widgets'    => array(
 				'file'             => 'widgets.min.css',
-				'preload_callback' => function() {
-					return wp_rig()->is_primary_sidebar_active();
-				},
+				'preload_callback' => '__return_false',
 			),
 			'wp-rig-front-page' => array(
 				'file' => 'front-page.min.css',
@@ -347,8 +345,8 @@ class Component implements Component_Interface, Templating_Component_Interface {
 		}
 
 		$google_fonts = array(
-			'Roboto Condensed' => array( '400', '400i', '700', '700i' ),
-			'Crimson Text'     => array( '400', '400i', '600', '600i' ),
+			'Poppins' => array( '300', '300i', '700', '700i' ),
+			'Open Sans'     => array( '300', '300i', '700', '700i' ),
 		);
 
 		/**

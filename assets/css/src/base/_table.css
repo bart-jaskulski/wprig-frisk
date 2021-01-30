@@ -1,0 +1,11 @@
+table {
+  & td {
+    border-top: 1px solid var(--color-theme-primary);
+    padding-top: 32px;
+    padding-bottom: 32px;
+  }
+}
+
+.price-table td:first-of-type {
+  width: 80%;
+}

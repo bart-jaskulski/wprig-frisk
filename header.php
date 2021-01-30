@@ -28,9 +28,22 @@ namespace WP_Rig\WP_Rig;
 	<a class="skip-link screen-reader-text" href="#primary"><?php esc_html_e( 'Skip to content', 'wp-rig' ); ?></a>
 
 	<header id="masthead" class="site-header">
-		<?php get_template_part( 'template-parts/header/custom_header' ); ?>
+		<nav class="site-navigation">
+			<?php
+			if ( has_custom_logo() ) :
+				the_custom_logo();
+			else :
+				?>
+	<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home" class="brand-logo"><?php bloginfo( 'name' ); ?></a>
+	<?php	endif; ?>
+<button class="menu-toggle js-menu-toggle"><img src="<?php echo esc_url( get_theme_file_uri( '/assets/images/menu-black-36dp.svg' ) ); ?>"></button>
+<?php
+			wp_rig()->display_primary_nav_menu(
+				array(
+					'menu_class' => 'header-menu menu js-menu-open',
+				)
+			);
+			?>
 
-		<?php get_template_part( 'template-parts/header/branding' ); ?>
-
-		<?php get_template_part( 'template-parts/header/navigation' ); ?>
+		</nav>
 	</header><!-- #masthead -->

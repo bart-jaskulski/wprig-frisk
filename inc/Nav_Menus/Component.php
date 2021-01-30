@@ -10,6 +10,7 @@ namespace WP_Rig\WP_Rig\Nav_Menus;
 use WP_Rig\WP_Rig\Component_Interface;
 use WP_Rig\WP_Rig\Templating_Component_Interface;
 use WP_Post;
+use function WP_Rig\WP_Rig\wp_rig;
 use function add_action;
 use function add_filter;
 use function register_nav_menus;
@@ -42,7 +43,9 @@ class Component implements Component_Interface, Templating_Component_Interface {
 	 */
 	public function initialize() {
 		add_action( 'after_setup_theme', array( $this, 'action_register_nav_menus' ) );
+		add_action( 'wp_enqueue_scripts', array( $this, 'action_enqueue_scripts' ) );
 		add_filter( 'walker_nav_menu_start_el', array( $this, 'filter_primary_nav_menu_dropdown_symbol' ), 10, 4 );
+		add_filter( 'wp_nav_menu_items', array( $this, 'filter_wp_nav_menu_items' ), 10, 2 );
 	}
 
 	/**
@@ -68,6 +71,21 @@ class Component implements Component_Interface, Templating_Component_Interface {
 				static::PRIMARY_NAV_MENU_SLUG => esc_html__( 'Primary', 'wp-rig' ),
 			)
 		);
+	}
+
+	/**
+	 * Registers the navigation menus.
+	 */
+	public function action_enqueue_scripts() {
+		wp_enqueue_script(
+			'wp-rig-navigation',
+			get_theme_file_uri( '/assets/js/index.min.js' ),
+			array(),
+			wp_rig()->get_asset_version( get_theme_file_path( '/assets/js/index.min.js' ) ),
+			true
+		);
+		wp_script_add_data( 'wp-rig-navigation', 'async', true );
+		wp_script_add_data( 'wp-rig-navigation', 'precache', true );
 	}
 
 	/**
@@ -103,6 +121,26 @@ class Component implements Component_Interface, Templating_Component_Interface {
 		}
 
 		return $item_output;
+	}
+
+	/**
+	 * Append icon with link to the primary menu.
+	 *
+	 * @method filter_wp_nav_menu_items
+	 * @param $html
+	 * @param $menu
+	 */
+	public function filter_wp_nav_menu_items( $html, $menu ) {
+		if ( static::PRIMARY_NAV_MENU_SLUG === $menu->theme_location ) {
+			$html .=
+			'<li>
+				<a href="tel:12312312">
+				<img src="https://icongr.am/fontawesome/phone.svg?size=34&color=000000\">
+				</a>
+			</li>';
+		}
+
+		return $html;
 	}
 
 	/**

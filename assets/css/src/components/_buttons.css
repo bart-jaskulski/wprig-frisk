@@ -3,13 +3,24 @@ input[type="reset"],
 input[type="button"],
 button,
 .button,
-a.button {
-	background-color: var(--color-theme-primary);
-	color: var(--color-theme-white);
-	border: none;
-	outline: 0;
-	border-radius: 0.25rem;
-	padding: 0.5em 1em;
-	text-transform: uppercase;
-	cursor: pointer;
+a.button,
+.wp-block-button__link {
+  padding: 0.8em 3.5em;
+  background-color: var(--color-theme-primary);
+  border: none;
+  border-radius: 0;
+  color: var(--color-theme-white);
+  line-height: 1;
+  cursor: pointer;
+
+  &.is-style-outline {
+    background-color: transparent;
+    border-color: var(--color-theme-primary);
+    color: var(--color-theme-primary);
+  }
+}
+
+.is-style-outline > .wp-block-button__link,
+.wp-block-button__link.is-style-outline {
+  border-color: var(--color-theme-primary);
 }

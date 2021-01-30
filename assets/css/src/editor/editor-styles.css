@@ -23,8 +23,35 @@
 @import "../base/_typography.css";
 @import "../base/_elements.css";
 @import "../base/_links.css";
+@import "../components/_buttons.css";
+@import "../components/_hero.css";
 @import "../_media.css";
 @import "../plugins/_wp.css";
+
+/*--------------------------------------------------------------
+# Buttons (copied instead of import, because of too much general style)
+--------------------------------------------------------------*/
+
+.wp-block-button__link {
+  padding: 0.8em 3.5em;
+  background-color: var(--color-theme-primary);
+  border: none;
+  border-radius: 0;
+  color: var(--color-theme-white);
+  line-height: 1;
+  cursor: pointer;
+
+  &.is-style-outline {
+    background-color: transparent;
+    border-color: var(--color-theme-primary);
+    color: var(--color-theme-primary);
+  }
+}
+
+.is-style-outline > .wp-block-button__link,
+.wp-block-button__link.is-style-outline {
+  border-color: var(--color-theme-primary);
+}
 
 /*--------------------------------------------------------------
 # Adjustments for the editor
@@ -32,62 +59,62 @@
 button,
 select,
 option {
-	color: inherit;
-	font-family: inherit;
-	font-size: inherit;
-	line-height: inherit;
-	border-radius: inherit;
+  color: inherit;
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+  border-radius: inherit;
 }
 
 .editor-post-title__input {
-	font-family: var(--highlight-font-family);
-	font-stretch: condensed;
-	font-size: 2.5rem;
-	line-height: 1.4;
-	margin-top: 0;
-	margin-bottom: 0;
+  font-family: var(--highlight-font-family);
+  font-stretch: condensed;
+  font-size: 2.5rem;
+  line-height: 1.4;
+  margin-top: 0;
+  margin-bottom: 0;
 }
 
 .gallery .gallery-item,
 .wp-block-freeform .gallery .gallery-item {
-	width: auto;
+  width: auto;
 }
 
 /* Main column width */
 .wp-block {
-	max-width: calc(var(--content-width) + 30px);
+  max-width: calc(var(--content-width) + 30px);
 }
 
 /* Width of "wide" blocks */
 .wp-block[data-align="wide"] {
-	max-width: calc(50% + var(--content-width) / 2 + 76px);
+  max-width: calc(50% + var(--content-width) / 2 + 76px);
 }
 
 /* Width of "full-wide" blocks */
 .wp-block[data-align="full"] {
-	max-width: none;
+  max-width: none;
 }
 
 .wp-block-cover h2,
 .wp-block-cover h3,
 .wp-block-cover h4 {
-	color: inherit;
+  color: inherit;
 }
 
 .wp-block-cover .wp-block-cover-text {
-	font-size: 2em;
-	line-height: 1.25;
+  font-size: 2em;
+  line-height: 1.25;
 }
 
 .wp-block-archives,
 .wp-block-categories__list,
 .wp-block-latest-posts,
 .wp-block-latest-comments {
-	margin-left: auto;
-	margin-right: auto;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .wp-block-latest-comments {
-	padding-left: 2.5em;
-	padding-right: 2.5em;
+  padding-left: 2.5em;
+  padding-right: 2.5em;
 }
